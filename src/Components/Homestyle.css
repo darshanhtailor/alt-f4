@@ -1,0 +1,32 @@
+.home-nav{
+    width: 100%;
+    background-color: hsl(225, 14%, 20%);
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.EditorLink{
+    padding: 8px;
+    max-width: 100px;
+    background-color: rgb(255, 255, 255);
+    margin-left: 1rem;
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 700;
+    color: hsl(225, 14%, 20%);
+}
+.right{
+    width: 80%;
+    display: flex;
+    justify-content:flex-end ;
+}
+
+.home-nav h2{
+    color: #fff;
+    margin-left: 1rem;
+}
