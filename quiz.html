@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .questionsContainer {}
+
+        .question {
+            text-align: center;
+            margin: 40px 100px;
+            border: 2px solid orange;
+            padding: 30px 10px;
+            background: black;
+            color: white;
+            box-shadow: 5px 5px orange;
+            border-radius: 50px;
+        }
+
+        .questionText {
+            font-size: 30px;
+            margin: 15px 10px;
+            color: orange;
+        }
+
+        .options {
+            margin: 20px 10px;
+            font-size: 18px;
+        }
+
+        .qresult {
+            color:orange
+        }
+
+        #submit {
+            margin: auto;
+            padding: 15px 50px;
+            color: white;
+            background: black;
+            border-radius: 20px;
+            box-shadow: 2px 2px orange;
+        }
+
+        #submit:hover {
+            margin: auto;
+            padding: 15px 50px;
+            color: black;
+            background: orange;
+            border-radius: 20px;
+        }
+
+        #overallResult {
+            text-align: center;
+            color: white;
+        }
+
+        .button {
+            display: flex;
+            justify-content: center;
+            margin: 30px 10px;
+        }
+        @media screen and (max-width:500px) {
+            .question {
+            text-align: center;
+            margin: 40px 10px;
+            border: 2px solid orange;
+            padding: 30px 10px;
+            background: black;
+            color: white;
+            box-shadow: 5px 5px orange;
+            border-radius: 50px;
+        }
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="color:white">Welcome to quiz</h1>
+    <div class="questionsContainer">
+
+        <div class="question">
+            <div class="questionText">1.how to put anchor Tag?</div>
+            <div class="options"><input class="radiobtn" type="radio" name="question1" value="A">A)achor tag</div>
+            <div class="options"><input class="radiobtn" type="radio" name="question1" value="B">B)Label tag</div>
+            <div class="options"><input class="radiobtn" type="radio" name="question1" value="C">C)Div Tag</div>
+            <div class="options"><input class="radiobtn" type="radio" name="question1" value="D">D)Script Tag</div>
+            <h3>
+                <div class="qresult" id="Q1result"></div>
+            </h3>
+        </div>
+        <div class="question">
+            <div class="questionText">2.how to pick up a chair?</div>
+            <div class="options"><input class="radiobtn" type="radio" name="question2" value="A">A)With hand</div>
+            <div class="options"><input class="radiobtn" type="radio" name="question2" value="B">B)With legs</div>
+            <div class="options"><input class="radiobtn" type="radio" name="question2" value="C">C)With mouth</div>
+            <div class="options"><input class="radiobtn" type="radio" name="question2" value="D">D)dont pick</div>
+            <h3>
+                <div class="qresult" id="Q2result"></div>
+            </h3>
+        </div>
+        <div class="question">
+            <div class="questionText">3.Rasode mei kon tha?</div>
+            <div class="options"><input class="radiobtn" type="radio" name="question3" value="A">A)Hritik</div>
+            <div class="options"><input class="radiobtn" type="radio" name="question3" value="B">B)Darshan</div>
+            <div class="options"><input class="radiobtn" type="radio" name="question3" value="C">C)Arihant</div>
+            <div class="options"><input class="radiobtn" type="radio" name="question3" value="D">D)Rashid</div>
+            <h3>
+                <div class="qresult" id="Q3result"></div>
+            </h3>
+        </div>
+        <h1>
+            <div id="overallResult"></div>
+        </h1>
+        <div class="button">
+            <button id="submit">Submit</button>
+        </div>
+
+
+    </div>
+    <script>
+
+        let submit = document.getElementById("submit");
+        let overallResult = document.getElementById("overallResult");
+
+        submit.addEventListener("click", () => {
+            let marks = 0;
+
+            //question1
+            let question1 = document.getElementsByName("question1");
+            let Q1result = document.getElementById("Q1result");
+            for (i = 0; i < question1.length; i++) {
+                if (question1[i].checked) {
+                    let correctans = "A";
+                    console.log(question1[i].value);
+                    // seletedoption.innerText=question1[i].value;
+                    if (question1[i].value == correctans) {
+                        Q1result.innerText = "Correct answer";
+                        marks++;
+                    } else {
+                        Q1result.innerText = "wrong answer,correct answer is:" + correctans;
+                    }
+                }
+            }
+            //question2
+            let question2 = document.getElementsByName("question2");
+            let Q2result = document.getElementById("Q2result");
+            for (i = 0; i < question2.length; i++) {
+                if (question2[i].checked) {
+                    let correctans = "D";
+                    console.log(question2[i].value);
+                    // seletedoption.innerText=question1[i].value;
+                    if (question2[i].value == correctans) {
+                        Q2result.innerText = "Correct answer";
+                        marks++;
+                    } else {
+                        Q2result.innerText = "wrong answer,correct answer is:" + correctans;
+                    }
+                }
+            }
+            //question3
+            let question3 = document.getElementsByName("question3");
+            let Q3result = document.getElementById("Q3result");
+            for (i = 0; i < question3.length; i++) {
+                if (question3[i].checked) {
+                    let correctans = "B";
+                    console.log(question3[i].value);
+                    // seletedoption.innerText=question1[i].value;
+                    if (question3[i].value == correctans) {
+                        Q3result.innerText = "Correct answer";
+                        marks++;
+                    } else {
+                        Q3result.innerText = "wrong answer,correct answer is:" + correctans;
+                    }
+                }
+            }
+            overallResult.innerText = "Total Marks:" + marks + "/3";
+            submit.style.display = "none";
+        }
+        )
+
+    </script>
+</body>
+
+</html>
