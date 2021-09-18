@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+        /* font-family: 'Lato', sans-serif; */
+        * {
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+            /* background-color: #666a7c; */
+        }
+
+        li a button {
+            font-family: 'Lato', sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            color: beige;
+            text-decoration: none;
+        }
+
+        header {
+            background-color: black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 10%;
+        }
+
+        .nav-logo {
+            cursor: pointer;
+        }
+
+        .nav_links {
+            /* list-style: none; */
+        }
+
+        .navList {
+            display: inline-block;
+            padding: 0px 20px;
+        }
+
+        .navList a {
+            transition: all 0.3s ease 0s;
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .navList a:hover {
+            color: rgb(58, 135, 187);
+        }
+
+        button {
+            padding: 9px 25px;
+            background-color: rgb(79, 160, 180);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease 0s;
+        }
+
+        button:hover {
+            background-color: rgba(31, 154, 158, 0.8);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <h1>lets make a navbar</h1> -->
+    <header>
+        <img class="nav-logo" src="logo1.jpg" width="50px" height="50px" alt="nav-logo">
+        <nav>
+            <ul class="nav_links">
+                <li class="navList"><a href="#">Home</a></li>
+                <li class="navList"><a href="#">Tutorials</a></li>
+                <li class="navList"><a href="#">Editorial</a></li>
+            </ul>
+        </nav>
+        <div>
+            <a href="#" class="cta"><button>Login</button></a>
+            <a href="#" class="cta"><button>Signup</button></a>
+        </div>
+        
+    </header>
+</body>
+
+</html>
