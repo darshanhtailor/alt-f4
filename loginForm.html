@@ -22,12 +22,13 @@
             height: 100vh;
         }
 
-        .svg1 img {
+        #devSvg{
             width: 500px;
             height: auto;
+            transition: all 0.5s ease;
         }
 
-        .loginBox{
+        .loginBox {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -46,7 +47,7 @@
             margin-top: 5%;
         }
 
-        .googleSignin{
+        .googleSignin {
             display: flex;
             justify-content: space-around;
             align-items: center;
@@ -63,19 +64,14 @@
             border-radius: 2px;
             font-size: 1.05em;
         }
-        
-        .googleSignin img{
+
+        .googleSignin img {
             height: inherit;
             width: auto;
             border-radius: 50%;
         }
 
-        /* .googleSignin div{
-            position: absolute;
-            right: 0;
-        } */
-
-        .or{
+        .or {
             text-align: center;
             margin-top: 5%;
         }
@@ -168,7 +164,7 @@
         }
 
         @media only screen and (max-width: 768px) {
-            .svg1 {
+            #devSvg {
                 display: none;
             }
         }
@@ -177,8 +173,8 @@
 
 <body>
     <div class="container">
-        <div class="svg1">
-            <img src="svg1.svg">
+        <div class="svgs">
+            <img src="" id = "devSvg">
         </div>
         <div class="loginBox">
             <div class="motto">
@@ -189,7 +185,7 @@
                     <img src="googleicon.png">
                     <div>Continue with Google</div>
                 </div>
-                <div class = "or">
+                <div class="or">
                     OR
                 </div>
                 <div class="options">
@@ -232,6 +228,18 @@
             document.getElementsByClassName("signUp")[0].style.display = "none";
         }
     }
+    document.getElementById("devSvg").src = "svg1.svg";
+    var images = ["svg4.svg", "svg3.svg", "svg2.svg", "svg1.svg "];
+    var i = 0;
+    var renew = setInterval(function () {
+        if (images.length == i) {
+            i = 0;
+        }
+        else {
+            document.getElementById("devSvg").src = images[i];
+            i++;
+        }
+    }, 3000);
 </script>
 
 </html>
