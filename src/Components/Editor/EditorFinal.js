@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Editor from "./Editor";
 import Chatbot from "../Chatbot/Chatbot";
-import './style.css'
+import "./EditorFinal.css";
 import useLocalStorage from "../../hooks/useLocalStorage";
 function EditorFinal() {
   const [html, setHtml] = useLocalStorage("html", "");
@@ -26,29 +26,39 @@ function EditorFinal() {
   }, [html, css, js]);
 
   return (
-    <div>
-      <div className="eidtor-nav">
-          <h2>ALT-F4    <small>  Editor</small></h2>
+    <div className="Editor_wrapper">
+      <div className="editor-nav">
         <button onClick={() => setRow(!row)}>Change View</button>
       </div>
 
-      <div className={`wrapper ${row ? "wrapper-row" : ""}`}>
+      <div className={`original_editor_wrapper ${row ? "wrapper-row" : ""}`}>
         <div className={`pane top-pane  ${row ? "top-pane-row" : ""} `}>
-          <Editor
-            language="xml"
-            displayName="HTML"
-            value={html}
-            onChange={setHtml}
-          />
-          <Editor
-            language="css"
-            displayName="CSS"
-            value={css}
-            onChange={setCss}
-          />
-          <Editor language="js" displayName="js" value={js} onChange={setJs} />
+          <div className={`contain_Editor ${row ? "contain_Editor_row" : ""} `}>
+            <Editor
+              language="xml"
+              displayName="HTML"
+              value={html}
+              onChange={setHtml}
+            />
+          </div>
+          <div className={`contain_Editor ${row ? "contain_Editor_row" : ""} `}>
+            <Editor
+              language="css"
+              displayName="CSS"
+              value={css}
+              onChange={setCss}
+            />
+          </div>
+          <div className={`contain_Editor ${row ? "contain_Editor_row" : ""} `}>
+            <Editor
+              language="js"
+              displayName="js"
+              value={js}
+              onChange={setJs}
+            />
+          </div>
         </div>
-        <div className={`pane  ${row ? "pane-row" : ""} `}>
+        <div className={`pane_output  ${row ? "pane-row" : ""} `}>
           <iframe
             srcDoc={srcDoc}
             title="output"
@@ -59,7 +69,7 @@ function EditorFinal() {
           />
         </div>
       </div>
-        <Chatbot/>
+      <Chatbot />
     </div>
   );
 }

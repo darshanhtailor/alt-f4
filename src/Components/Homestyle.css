@@ -1,32 +1,16 @@
-.home-nav{
-    width: 100%;
-    background-color: hsl(225, 14%, 20%);
-    min-height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.HomeNavbar{
 }
-.EditorLink{
-    padding: 8px;
-    max-width: 100px;
-    background-color: rgb(255, 255, 255);
-    margin-left: 1rem;
-    margin-right: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    font-size: 22px;
-    font-weight: 700;
-    color: hsl(225, 14%, 20%);
-}
-.right{
-    width: 80%;
-    display: flex;
-    justify-content:flex-end ;
-}
-
-.home-nav h2{
-    color: #fff;
-    margin-left: 1rem;
+.welcome_msg{
+    position: absolute;
+    top:80px;
+    right:10px;
+    font-size: 34px;
+    color: rgb(238, 93, 141);
+    font-weight: 500;
+    background-color: rgba(252, 210, 217, 0.473);
+    width: 450px;
+    border-radius: 4px;
+    text-align: center;
+    padding: 4px;
+    z-index: 50;
 }

@@ -4,7 +4,7 @@ import 'codemirror/theme/material.css'
 import 'codemirror/mode/javascript/javascript'
 import 'codemirror/mode/xml/xml'
 import 'codemirror/mode/css/css'
-import './style.css'
+import './EditorFinal.css'
 import Chatbot from "../Chatbot/Chatbot";
 import {Controlled as ControlledEditor}   from 'react-codemirror2';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -24,15 +24,15 @@ const Editor = (props) => {
   }
   
   return (
-      <div className={`editor-container ${open? '' : 'collapsed'}`} >
-      <div className="editor-title">
+      <div className={`Main_Editor_container  ${open? '' : 'collapsed'}`} >
+      <div className="Main_Editor_title">
         {displayName}
         <button
           onClick={()=>setOpen(prev=>!prev)}
           type="button"
           className="expand-collapse-btn"
         >
-          <FontAwesomeIcon  icon={open?faCompressAlt:faExpandAlt} />
+          <FontAwesomeIcon  icon={open?faCompressAlt:faExpandAlt} className="icon" />
         </button>
       </div>
       <ControlledEditor 
@@ -44,7 +44,7 @@ const Editor = (props) => {
           lint:true,
           mode:language,
           lineNumbers:true,
-          theme:'material'
+          theme:'material',
         }}
         
       />
